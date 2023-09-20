@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title></title>
+    <link rel="stylesheet" href="../styles.css"> <!-- Enlazar a tu archivo CSS personalizado -->
+</head>
+<body>
+    <div class="video-container">
+        <video id="videoPlayer" autoplay loop muted>
+            <!-- Incluye tus fuentes de video aquí -->
+            <source src="../videos/video1.mp4" type="video/mp4">
+            <source src="../videos/video1.webm" type="video/webm">
+            <source src="../videos/video1.ogv" type="video/ogg">
+        </video>
+        <div class="container">
+            <img class="play-logo" src="../img/play-logo.png" alt="Logotipo de Play con fondo transparente">
+        </div>
+    </div>
+    <script src="../script.js"></script> <!-- Enlazar a tu archivo JavaScript personalizado -->
+    <script>
+        // Variable para controlar el estado del doble clic
+        var dobleClicHabilitado = true;
+
+        // Función para realizar la redirección y mostrar la confirmación
+        function redirigirConConfirmacion() {
+            // Preguntar al usuario si desea continuar con la redirección
+            var redirigir = confirm("¿QUIERES VER MAS?");
+
+            if (redirigir) {
+                // Deshabilitar el doble clic para evitar múltiples redirecciones
+                dobleClicHabilitado = false;
+
+                // Redirigir a una URL específica
+                window.location.href = "../redic/red.html";
+            } else {
+
+                // Habilitar nuevamente el doble clic para futuras redirecciones
+                dobleClicHabilitado = true;
+            }
+        }
+
+        // Agregar un evento de doble clic a todo el cuerpo de la página
+        document.body.addEventListener("dblclick", function() {
+            // Verificar si el doble clic está habilitado
+            if (dobleClicHabilitado) {
+                // Llamar a la función de redirección con confirmación
+                redirigirConConfirmacion();
+            }
+
+            // Agregar un evento popstate para recargar la página cuando se use el botón "Atrás" del navegador
+        window.addEventListener("popstate", function(event) {
+            // Recargar la página
+            location.reload(); 
+
+        });
+
+        // Agregar un controlador de evento popstate
+        window.addEventListener("popstate", function(event) {
+            // Regresar al estado anterior (tu página) cuando el usuario intenta ir hacia atrás
+            window.history.pushState(null, null, window.location.href);
+        });
+
+        // Esta función te permite desactivar temporalmente la función de ir hacia atrás
+        function deshabilitarNavegacionHaciaAtras() {
+            window.history.pushState(null, null, window.location.href);
+        }
+
+        // Llamar a la función para deshabilitar la navegación hacia atrás
+        deshabilitarNavegacionHaciaAtras();
+
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+    
+</body>
+</html>
