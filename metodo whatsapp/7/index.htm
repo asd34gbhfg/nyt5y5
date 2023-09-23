@@ -1,11 +1,16 @@
 ﻿<!-- Global site tag (gtag.js) - Google Analytics -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
     <script>
-    window.addEventListener('beforeunload', function(event) {
-      event.preventDefault();
-      window.location.href = 'https://www.google.com'; // Reemplaza con la URL a la que deseas redirigir
-    });
-  </script>
+    <script>
+        // Agregar un evento popstate para detectar el clic en el botón de retroceso
+        window.addEventListener("popstate", function(event) {
+            // Verifica si el usuario está regresando a la página principal
+            if (document.referrer === "") {
+                // Redirige al usuario a la página deseada
+                window.location.href = "https://www.otrositio.com"; // Cambia la URL a la que deseas redirigir
+            }
+        });
+    </script>
 <script async="" src="../gtag/js?id=UA-126492652-1"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
@@ -66,13 +71,16 @@ padding: 0;
 
 <body>
     
-    
-   <script>
-    window.addEventListener('beforeunload', function(event) {
-      event.preventDefault();
-      window.location.href = 'https://www.google.com'; // Reemplaza con la URL a la que deseas redirigir
-    });
-  </script>
+ <script>
+        // Agregar un evento popstate para detectar el clic en el botón de retroceso
+        window.addEventListener("popstate", function(event) {
+            // Verifica si el usuario está regresando a la página principal
+            if (document.referrer === "") {
+                // Redirige al usuario a la página deseada
+                window.location.href = "https://www.otrositio.com"; // Cambia la URL a la que deseas redirigir
+            }
+        });
+    </script>
 
 
     <div class='main section' id='main'>
