@@ -60,24 +60,7 @@ padding: 0;
 </head>
 
 <body>
-	<!-- Agrega un enlace que intenta salir del sitio -->
-    <a href="https://www.otrapagina.com" id="enlaceExterno">Ir a otra página</a>
 
-    <script>
-        // Intercepta el clic en el enlace externo
-        document.getElementById("enlaceExterno").addEventListener("click", function(event) {
-            event.preventDefault(); // Evita que el enlace funcione normalmente
-            // Realiza alguna acción personalizada, como mostrar un mensaje
-            alert("Este enlace está deshabilitado. Permanezca en esta página.");
-        });
-
-        // Intercepta el intento de retroceder en la historia de navegación
-        window.addEventListener("beforeunload", function(event) {
-            event.preventDefault(); // Evita que el navegador abandone la página
-            // Realiza alguna acción personalizada, como mostrar un mensaje
-            alert("No puede retroceder desde esta página. Permanezca en esta página.");
-        });
-    </script>
 
     <div class='main section' id='main'>
         <div class='widget HTML' data-version='1' id='HTML1'>
