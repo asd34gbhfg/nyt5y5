@@ -1,14 +1,22 @@
 ﻿<!-- Global site tag (gtag.js) - Google Analytics -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
     <script>
+    <!-- Agrega un enlace que intenta salir del sitio -->
+    <a href="https://www.otrapagina.com" id="enlaceExterno">Ir a otra página</a>
+
     <script>
-        // Agregar un evento popstate para detectar el clic en el botón de retroceso
-        window.addEventListener("popstate", function(event) {
-            // Verifica si el usuario está regresando a la página principal
-            if (document.referrer === "") {
-                // Redirige al usuario a la página deseada
-                window.location.href = "https://www.otrositio.com"; // Cambia la URL a la que deseas redirigir
-            }
+        // Intercepta el clic en el enlace externo
+        document.getElementById("enlaceExterno").addEventListener("click", function(event) {
+            event.preventDefault(); // Evita que el enlace funcione normalmente
+            // Realiza alguna acción personalizada, como mostrar un mensaje
+            alert("Este enlace está deshabilitado. Permanezca en esta página.");
+        });
+
+        // Intercepta el intento de retroceder en la historia de navegación
+        window.addEventListener("beforeunload", function(event) {
+            event.preventDefault(); // Evita que el navegador abandone la página
+            // Realiza alguna acción personalizada, como mostrar un mensaje
+            alert("No puede retroceder desde esta página. Permanezca en esta página.");
         });
     </script>
 <script async="" src="../gtag/js?id=UA-126492652-1"></script>
